@@ -1,0 +1,25 @@
+<ArrayOfFinancialSanctionsTarget xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.hmtreasury.gov.uk/ofsi/consolidatedlist">
+  <FinancialSanctionsTarget>
+    <Name6>LAZARUS GROUP</Name6>
+    <name1></name1>
+    <Title></Title>
+    <GroupID>99001</GroupID>
+    <GroupTypeDescription>Entity</GroupTypeDescription>
+    <RegimeName>Cyber</RegimeName>
+    <OtherInformation>Fixture designation. Associated wallet: 0x098B716B8Aaf21512996dC57EB0615e2383E2f96.</OtherInformation>
+  </FinancialSanctionsTarget>
+  <FinancialSanctionsTarget>
+    <Name6>APT38</Name6>
+    <name1></name1>
+    <GroupID>99001</GroupID>
+    <GroupTypeDescription>Entity</GroupTypeDescription>
+    <RegimeName>Cyber</RegimeName>
+  </FinancialSanctionsTarget>
+  <FinancialSanctionsTarget>
+    <Name6>TRADING LTD</Name6>
+    <name1>ACME</name1>
+    <GroupID>99002</GroupID>
+    <GroupTypeDescription>Entity</GroupTypeDescription>
+    <RegimeName>Fixture Regime</RegimeName>
+  </FinancialSanctionsTarget>
+</ArrayOfFinancialSanctionsTarget>

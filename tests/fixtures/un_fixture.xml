@@ -1,0 +1,25 @@
+<CONSOLIDATED_LIST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ENTITIES>
+    <ENTITY>
+      <DATAID>6900001</DATAID>
+      <REFERENCE_NUMBER>KPe.999</REFERENCE_NUMBER>
+      <NAME>LAZARUS GROUP</NAME>
+      <ALIAS>
+        <NAME>APT38</NAME>
+      </ALIAS>
+      <COMMENTS1>Fixture entry for offline tests.</COMMENTS1>
+    </ENTITY>
+  </ENTITIES>
+  <INDIVIDUALS>
+    <INDIVIDUAL>
+      <DATAID>6900002</DATAID>
+      <REFERENCE_NUMBER>KPi.999</REFERENCE_NUMBER>
+      <FIRST_NAME>Jane</FIRST_NAME>
+      <SECOND_NAME>Doe</SECOND_NAME>
+      <DESIGNATION>
+        <VALUE>Fixture role</VALUE>
+      </DESIGNATION>
+      <COMMENTS1>Nothing to see here.</COMMENTS1>
+    </INDIVIDUAL>
+  </INDIVIDUALS>
+</CONSOLIDATED_LIST>

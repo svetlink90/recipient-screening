@@ -1,0 +1,50 @@
+<sdnList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/XML">
+  <publshInfo>
+    <Publish_Date>07/28/2026</Publish_Date>
+    <Record_Count>2</Record_Count>
+  </publshInfo>
+  <sdnEntry>
+    <uid>99901</uid>
+    <lastName>LAZARUS GROUP</lastName>
+    <sdnType>Entity</sdnType>
+    <programList>
+      <program>DPRK3</program>
+    </programList>
+    <akaList>
+      <aka>
+        <uid>99902</uid>
+        <type>a.k.a.</type>
+        <category>strong</category>
+        <lastName>APT38</lastName>
+      </aka>
+      <aka>
+        <uid>99903</uid>
+        <type>a.k.a.</type>
+        <category>weak</category>
+        <lastName>GUARDIANS OF PEACE</lastName>
+      </aka>
+    </akaList>
+    <idList>
+      <id>
+        <uid>99911</uid>
+        <idType>Digital Currency Address - ETH</idType>
+        <idNumber>0x098B716B8Aaf21512996dC57EB0615e2383E2f96</idNumber>
+      </id>
+      <id>
+        <uid>99912</uid>
+        <idType>Digital Currency Address - BTC</idType>
+        <idNumber>1FMjnc6kvhX5RLQfBpD2n4EXAMPLE</idNumber>
+      </id>
+    </idList>
+    <remarks>Linked to DPRK cyber operations.</remarks>
+  </sdnEntry>
+  <sdnEntry>
+    <uid>99921</uid>
+    <firstName>John</firstName>
+    <lastName>SMITH</lastName>
+    <sdnType>Individual</sdnType>
+    <programList>
+      <program>TEST</program>
+    </programList>
+  </sdnEntry>
+</sdnList>

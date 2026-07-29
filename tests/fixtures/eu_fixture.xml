@@ -1,0 +1,11 @@
+<WHOLE>
+  <sanctionsEntity logicalId="EU999">
+    <regulation type="COUNCIL">Fixture Regulation (EU) 2026/999</regulation>
+    <nameAlias wholeName="LAZARUS GROUP" firstName="" middleName="" lastName=""/>
+    <identification number="" identificationTypeDescription="passport"/>
+    <remark>Fixture remark mentioning address 0x098B716B8Aaf21512996dC57EB0615e2383E2f96 in free text.</remark>
+  </sanctionsEntity>
+  <sanctionsEntity logicalId="EU998">
+    <nameAlias wholeName="ACME TRADING LTD"/>
+  </sanctionsEntity>
+</WHOLE>

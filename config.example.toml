@@ -1,0 +1,99 @@
+# recipient-screening configuration
+# All list URLs are official sources. Adjust only if a publisher moves the file.
+
+[agent]
+# Who receives STOP escalations. Shown verbatim in every STOP report.
+# Escalation pathway: any STOP_HIT / STOP_INCONCLUSIVE escalates to this contact.
+security_contact = "CONFIGURE: designated security contact (name + channel)"
+# Checklist reference stamped into reports.
+checklist_ref = "External Multisig Signing Request Checklist v1, item 9"
+
+[screening]
+# Re-fetch a list if the cache is older than this at screen time.
+max_list_age_hours = 24
+# Name-similarity bands (0-1). >= hit_threshold is a STOP_HIT;
+# >= review_threshold is a STOP_INCONCLUSIVE pending human disambiguation.
+name_hit_threshold = 0.95
+name_review_threshold = 0.85
+# Directories (relative to this config file's directory).
+data_dir = "data/lists"
+reports_dir = "reports"
+
+# ---- Sanctions lists (item 9: OFAC SDN, UN, EU, UK — all required) ----
+
+[[lists]]
+id = "ofac_sdn"
+name = "OFAC SDN List"
+url = "https://www.treasury.gov/ofac/downloads/sdn.xml"
+format = "ofac_xml"
+required = true
+
+[[lists]]
+id = "ofac_consolidated"
+name = "OFAC Consolidated (non-SDN) List"
+url = "https://www.treasury.gov/ofac/downloads/consolidated/consolidated.xml"
+format = "ofac_xml"
+required = true
+
+[[lists]]
+id = "un_consolidated"
+name = "UN Security Council Consolidated List"
+url = "https://scsanctions.un.org/resources/xml/en/consolidated.xml"
+format = "un_xml"
+required = true
+
+[[lists]]
+id = "eu_fsd"
+name = "EU Financial Sanctions Database (FSD)"
+# NOTE: webgate.ec.europa.eu blocks automated fetches (403) — refresh
+# always fails, so the ingested cache below is the screening source.
+# Download in a browser: https://webgate.ec.europa.eu/fsd/fsf → "Full list"
+# → CSV v1.1, then run:
+#   python3 -m recipient_screening ingest eu_fsd ~/Downloads/<file>.csv
+# (The v1.0 CSV carries the same rows in a legacy layout; v1.1 is parsed.
+# The stale-cache fallback keeps an ingested copy conclusive thereafter.)
+url = "https://webgate.ec.europa.eu/fsd/fsf/public/files/csvFullSanctionsList_1_1/content"
+format = "eu_fsd_csv"
+required = true
+
+[[lists]]
+id = "uk_ofsi"
+name = "UK OFSI Consolidated List"
+url = "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.xml"
+format = "uk_ofsi_xml"
+required = true
+
+# ---- On-chain risk providers (free/open sources) ----
+# A provider that is enabled+required but fails makes the screen INCONCLUSIVE
+# (which is a stop condition per item 9). Disabled providers are noted in the
+# report as NOT RUN so a reviewer can see the coverage gap.
+
+[risk.chainabuse]
+enabled = false          # set true once you register a free API key
+required = false
+api_key_env = "CHAINABUSE_API_KEY"
+api_secret_env = "CHAINABUSE_API_SECRET"
+
+[risk.etherscan_proximity]
+enabled = false          # set true once a key is configured
+required = false
+# Inline key for this local single-user install; api_key_env is the fallback
+# for environments where the key must not sit in a file.
+# api_key = "PASTE-KEY-HERE"   # or set the env var below
+api_key_env = "ETHERSCAN_API_KEY"
+lookback_txs = 200       # recent inbound txs scanned for flagged counterparties
+
+[risk.opensanctions]
+enabled = false          # set true once a key is configured
+required = false         # supplementary consolidation leg; the five lists above stay authoritative
+# api_key = "PASTE-KEY-HERE"   # or set the env var below
+api_key_env = "OPENSANCTIONS_API_KEY"
+dataset = "sanctions"    # consolidated sanctions only (not PEPs etc.)
+# OpenSanctions match scores, 0-1. >= hit is a STOP_HIT, >= review stops
+# inconclusive for human disambiguation (same semantics as the list bands).
+name_hit_threshold = 0.90
+name_review_threshold = 0.70
+
+[risk.known_sets]
+enabled = true           # offline known-mixer set; always available
+required = true

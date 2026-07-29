@@ -1,0 +1,5 @@
+fileGenerationDate;Entity_LogicalId;Entity_EU_ReferenceNumber;Entity_SubjectType;Entity_Regulation_Programme;Entity_Regulation_NumberTitle;Entity_Remark;NameAlias_WholeName;NameAlias_FirstName;NameAlias_MiddleName;NameAlias_LastName;Identification_Number;Identification_TypeDescription
+28/07/2026;9001;EU.99.1;E;DPRK;2016/1115 (OJ L182);;LAZARUS GROUP;;;;0x098B716B8Aaf21512996dC57EB0615e2383E2f96;Crypto wallet address
+28/07/2026;9001;EU.99.1;E;DPRK;2016/1115 (OJ L182);;APT38;;;;
+28/07/2026;9002;EU.99.2;P;TEST;2020/1 (OJ L1);;;Jane;X;Doe;P12345;Passport
+28/07/2026;9003;EU.99.3;E;TEST;2020/1 (OJ L1);;ACME TRADING LTD;;;;

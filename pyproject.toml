@@ -1,0 +1,20 @@
+[project]
+name = "recipient-screening"
+version = "0.1.0"
+description = "Deterministic sanctions & on-chain risk screening for external multisig signing requests (checklist v1, item 9)"
+requires-python = ">=3.11"
+dependencies = []  # zero third-party runtime deps by design
+
+[project.optional-dependencies]
+mcp = ["mcp>=2.0"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+recipient-screen = "recipient_screening.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["recipient_screening*"]

@@ -1,0 +1,27 @@
+{
+  "name": "screen_recipient",
+  "description": "Screen a multisig transaction recipient against OFAC SDN, UN, EU and UK sanctions lists and free on-chain risk indicators (mixer proximity, hack/scam reports) before signing. Deterministic local engine; returns CLEAR, STOP_HIT or STOP_INCONCLUSIVE with an evidence report. Any STOP verdict pauses the signing request and must be escalated to the designated security contact — never proceed on the requester's assurances.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "address": {
+        "type": "string",
+        "description": "Full recipient address (never truncated)."
+      },
+      "chain": {
+        "type": "string",
+        "description": "Chain of the pending transaction, e.g. 'ethereum'.",
+        "default": "ethereum"
+      },
+      "entity_name": {
+        "type": "string",
+        "description": "The recipient entity name as CLAIMED by the requester (a claim to verify, not a fact). Omit if not provided."
+      },
+      "context": {
+        "type": "string",
+        "description": "Request reference for the evidence record, e.g. Safe address + nonce or ticket link."
+      }
+    },
+    "required": ["address"]
+  }
+}

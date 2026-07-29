@@ -1,0 +1,17 @@
+recipient-screening
+Copyright 2026 recipient-screening contributors
+
+This product includes software developed by recipient-screening contributors.
+
+recipient-screening is a deterministic sanctions and on-chain risk
+screening engine for external multisig signing requests, implementing
+the screening mandate of the External Multisig Signing Request
+Checklist v1, item 9 (OFAC SDN, UN, EU, UK + on-chain risk indicators).
+
+Sanctions list data is fetched at runtime from the official publishers
+(US Treasury OFAC, UN Security Council, EU FSD, UK OFSI) and remains
+subject to each publisher's terms. Consolidated screening data queried
+via the OpenSanctions API is subject to OpenSanctions' terms
+(https://www.opensanctions.org/licensing/).
+
+For more information, visit: https://github.com/svetlink90/recipient-screening
